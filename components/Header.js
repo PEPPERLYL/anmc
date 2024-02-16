@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -53,22 +52,23 @@ export default function Header({ scrollToRef }) {
 
   return (
     <header className="sticky-header flex bg-white border-b-2 py-4 lg:py-2 px-5 lg:px-16 items-center justify-between gap-32">
-      <div className="flex gap-2">
-        <Image src={Logo} alt="Anmc logo" className="w-[40px] lg:w-[50px]" />
-        <p className="hidden lg:flex items-center capitalize font-semibold text-2xl">
-          <span className="text-red-700 italic">a</span>
-          <span className="text-blue-600 italic">n</span>
-          <span className="text-yellow-500 italic">m</span>
-          <span className="text-green-400 bold">c</span>
+      <div className="flex gap-2 items-center">
+        <Image src={Logo} alt="Anmc logo" width={50} height={50} />
+        <p className="flex items-center capitalize font-semibold text-2xl">
+          <span className="text-red-700 font-light italic">a</span>
+          <span className="text-blue-600 font-light italic">n</span>
+          <span className="text-yellow-500 font-light italic">m</span>
+          <span className="text-green-400 font-bold ml-1">c</span>
         </p>
       </div>
 
+      {/* Regular menu for larger screens */}
       <nav className="container mx-auto flex-grow">
         <ul className="hidden lg:flex justify-start gap-10">
           {navLinks.map((link) => (
             <li className="mx-2" key={link.section}>
               <a
-                className="text-black capitalize text-sm hover:underline-offs cursor-pointer"
+                className="text-black capitalize text-sm cursor-pointer"
                 onClick={() => scrollToRef(link.section)}
               >
                 {link.label}
@@ -78,9 +78,35 @@ export default function Header({ scrollToRef }) {
         </ul>
       </nav>
 
-      {/* Place "use client" at the extreme right */}
-      <div className="flex lg:hidden items-end">
+      {/* Mobile menu toggle */}
+      <div className="lg:hidden items-end">
         <FiMenu className="text-3xl cursor-pointer" onClick={toggleMenu} />
+      </div>
+      {/* Mobile menu */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 h-full bg-white bg-opacity-80 z-50 transition-all duration-500 ${
+          isMenuOpen ? "w-3/4" : "w-0"
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        <div className="bg-tertiary border-l-2 border-gray-600 w-full h-full flex flex-col justify-start p-4">
+          <IoCloseOutline
+            className="text-3xl my-4 cursor-pointer"
+            onClick={toggleMenu}
+          />
+          <ul className="mt-8 text-center">
+            {navLinks.map((link) => (
+              <li className="my-8" key={link.section}>
+                <a
+                  className="text-black capitalize font-medium text-xl cursor-pointer"
+                  onClick={() => scrollToRef(link.section)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </header>
   );
