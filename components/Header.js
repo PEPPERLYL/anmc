@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -50,6 +49,7 @@ export default function Header({ scrollToRef }) {
       window.removeEventListener("popstate", handleRouteChange);
     };
   }, []);
+
   return (
     <header className="sticky-header flex bg-white border-b-2 py-4 lg:py-2 px-5 lg:px-16 items-center justify-between gap-32">
       <div className="flex gap-2">
@@ -58,10 +58,11 @@ export default function Header({ scrollToRef }) {
           <span className="text-red-700 italic">a</span>
           <span className="text-blue-600 italic">n</span>
           <span className="text-yellow-500 italic">m</span>
-          <span className="text-green-400 italic">c</span>
+          <span className="text-green-400 bold">c</span>
         </p>
       </div>
-      <nav className="container mx-auto">
+
+      <nav className="container mx-auto flex-grow">
         <ul className="hidden lg:flex justify-start gap-10">
           {navLinks.map((link) => (
             <li className="mx-2" key={link.section}>
@@ -75,6 +76,11 @@ export default function Header({ scrollToRef }) {
           ))}
         </ul>
       </nav>
+
+      {/* Place "use client" at the extreme right */}
+      <div className="flex lg:hidden items-end">
+        <FiMenu className="text-3xl cursor-pointer" onClick={toggleMenu} />
+      </div>
     </header>
   );
 }
