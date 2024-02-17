@@ -83,7 +83,7 @@ const Attend = () => {
               height={150}
               className="object-cover w-full h-full  duration-300 ease-in-out "
             />
-            <div className="absolute inset-0 bg-black opacity-70 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
+            <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-100"></div>
             <p className="absolute inset-0 flex items-center justify-center text-center text-white font-light text-xl pointer-events-none">
               {item.title}
             </p>
