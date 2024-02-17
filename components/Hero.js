@@ -52,12 +52,17 @@ const Hero = () => {
         {/* Hero Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         {/* Hero Content */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+        <div className="absolute text-white">
+          <p className="text-3xl lg:text-6xl font-bold mb-4">Africa</p>
+          <p className="text-xl lg:text-2xl font-semibold mb-4">
             NFT & Metaverse Conference
-          </h1>
-          <button className="bg-white text-black px-6 py-3 rounded-lg shadow-lg">
-            Register
+          </p>
+          <p className="hidden lg:flex flex-col text-lg mb-4">
+            <span>Unlocking Africa Digital Future:</span>
+            <span> showcasing Creativity. Made by Africa. For Africa</span>
+          </p>
+          <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg">
+            Register Here
           </button>
         </div>
       </div>
