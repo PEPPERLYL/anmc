@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define the rainbow colors using custom CSS variables */
+:root {
+  --border-color-1: #ff0000; /* Red */
+  --border-color-2: #0000ff; /* Blue */
+  --border-color-3: #ffff00; /* Yellow */
+  --border-color-4: #00ff00; /* Green */
+}
+
+/* Apply the rainbow border */
+.border-rainbow {
+  border-image: linear-gradient(
+      to bottom,
+      var(--border-color-1),
+      var(--border-color-2),
+      var(--border-color-3),
+      var(--border-color-4)
+    )
+    1;
+  border-image-slice: 1;
+}
+
 .sticky-header {
   position: fixed;
   top: 0;

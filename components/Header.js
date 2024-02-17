@@ -84,12 +84,12 @@ export default function Header({ scrollToRef }) {
       </div>
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full bg-white bg-opacity-80 z-50 transition-all duration-500 ${
-          isMenuOpen ? "w-3/4" : "w-0"
+        className={`lg:hidden fixed top-0 right-0 h-full bg-white z-50 transition-all duration-500 ${
+          isMenuOpen ? "w-3/5" : "w-0"
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
-        <div className="bg-tertiary border-l-2 border-gray-600 w-full h-full flex flex-col justify-start p-4">
+        <div className="bg-tertiary border-l-4 border-rainbow w-full h-full flex flex-col justify-start p-4">
           <IoCloseOutline
             className="text-3xl my-4 cursor-pointer"
             onClick={toggleMenu}
