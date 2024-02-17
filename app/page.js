@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Logos from "@/components/Logos";
 
 export default function Home() {
   const sectionRefs = {
@@ -23,9 +24,13 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       <Header scrollToRef={scrollToRef} />
-      <section ref={sectionRefs.home} className="mb-8">
-        <Hero />
-        <p>This is the first section.</p>
+      <section ref={sectionRefs.home} className="flex flex-col gap-3">
+        <div>
+          <Hero />
+        </div>
+        <div>
+          <Logos />
+        </div>
       </section>
       <section ref={sectionRefs.event} className="h-[300px] mb-8">
         <h1 className="text-3xl font-bold">Section 2</h1>

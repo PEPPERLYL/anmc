@@ -10,7 +10,7 @@ import heroimg6 from "../assets/Hero-Image-6.png";
 import heroimg7 from "../assets/Hero-Image-7.png";
 import heroimg8 from "../assets/Hero-Image-8.png";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
@@ -37,7 +37,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Hero Slider */}
-      <div className="h-screen lg:h-[550px] w-full flex items-center justify-center">
+      <div className="h-screen lg:h-[500px] w-full flex items-center justify-center">
         {slides.map((slide, index) => (
           <Image
             key={index}
@@ -54,12 +54,17 @@ const Hero = () => {
         {/* Hero Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         {/* Hero Content */}
-        <div className="absolute lg:left-10 text-white">
-          <p className="text-4xl lg:text-6xl font-bold mb-1">Africa</p>
-          <p className="text-2xl lg:text-3xl font-semibold mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+          className="absolute lg:left-10 text-white"
+        >
+          <p className="text-6xl font-bold mb-1">Africa</p>
+          <p className="text-3xl font-semibold mb-4">
             NFT & Metaverse Conference
           </p>
-          <p className="flex flex-col text-lg gap-0 mb-4">
+          <p className="flex flex-col text-xl gap-0 mb-4">
             <span>Unlocking Africa&apos;s Digital Future:</span>
             <span> showcasing Creativity. Made by Africa. For Africa</span>
           </p>
@@ -70,7 +75,7 @@ const Hero = () => {
             Register Here
             <FaArrowRight />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
