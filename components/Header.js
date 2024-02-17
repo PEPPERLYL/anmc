@@ -35,7 +35,7 @@ export default function Header({ scrollToRef }) {
 
   return (
     <header
-      className={`sticky-header flex bg-transparent py-4 lg:py-2 px-5 lg:px-16 items-center justify-between ${
+      className={`sticky-header flex bg-transparent py-4 lg:py-2 px-5 lg:px-24 items-center justify-between ${
         isScrolled ? "scrolled" : ""
       }`}
     >

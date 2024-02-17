@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import heroimg1 from "../assets/Hero-Image-1.png";
 import heroimg2 from "../assets/Hero-Image-2.png";
 import heroimg3 from "../assets/Hero-Image-3.png";
@@ -8,6 +9,7 @@ import heroimg5 from "../assets/Hero-Image-5.png";
 import heroimg6 from "../assets/Hero-Image-6.png";
 import heroimg7 from "../assets/Hero-Image-7.png";
 import heroimg8 from "../assets/Hero-Image-8.png";
+import Link from "next/link";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +37,7 @@ const Hero = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Hero Slider */}
-      <div className="h-screen lg:h-[650px] w-full flex items-center justify-center">
+      <div className="h-screen lg:h-[550px] w-full flex items-center justify-center">
         {slides.map((slide, index) => (
           <Image
             key={index}
@@ -52,18 +54,22 @@ const Hero = () => {
         {/* Hero Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         {/* Hero Content */}
-        <div className="absolute text-white">
-          <p className="text-3xl lg:text-6xl font-bold mb-4">Africa</p>
-          <p className="text-xl lg:text-2xl font-semibold mb-4">
+        <div className="absolute lg:left-10 text-white">
+          <p className="text-4xl lg:text-6xl font-bold mb-1">Africa</p>
+          <p className="text-2xl lg:text-3xl font-semibold mb-4">
             NFT & Metaverse Conference
           </p>
-          <p className="hidden lg:flex flex-col text-lg mb-4">
-            <span>Unlocking Africa Digital Future:</span>
+          <p className="flex flex-col text-lg gap-0 mb-4">
+            <span>Unlocking Africa&apos;s Digital Future:</span>
             <span> showcasing Creativity. Made by Africa. For Africa</span>
           </p>
-          <button className="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg">
+          <Link
+            href="#"
+            className="flex items-center justify-center bg-[#5E54EF] text-white gap-2 py-3 rounded-lg w-[160px] hover:animate-pulse hover:text-[#5E54EF] hover:bg-white "
+          >
             Register Here
-          </button>
+            <FaArrowRight />
+          </Link>
         </div>
       </div>
     </div>

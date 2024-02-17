@@ -1,7 +1,12 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Fira_Sans_Condensed } from "next/font/google";
+
+const firaSansCondensed = Fira_Sans_Condensed({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-fira-sans-condensed",
+});
 
 export const metadata = {
   title: "ANMC | Africa NFT  & Metaverse Conference",
@@ -12,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${firaSansCondensed.variable}`}>{children}</body>
     </html>
   );
 }
