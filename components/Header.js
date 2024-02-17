@@ -17,41 +17,28 @@ export default function Header({ scrollToRef }) {
 
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => {
-    const isTop = window.scrollY < 30;
-    const header = document.querySelector(".sticky-header");
-
-    if (isTop) {
-      header.classList.remove("scrolled");
-    } else {
-      header.classList.add("scrolled");
-    }
+    const isTop = window.scrollY < 50;
+    setIsScrolled(!isTop);
   };
 
-  if (typeof window !== "undefined") {
-    // Check if window is defined (to avoid issues during server-side rendering)
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  }
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setIsMenuOpen(false);
-    };
-
-    window.addEventListener("popstate", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-    };
-  }, []);
-
   return (
-    <header className="sticky-header flex bg-white border-b-2 py-4 lg:py-2 px-5 lg:px-16 items-center justify-between gap-32">
+    <header
+      className={`sticky-header flex bg-transparent py-4 lg:py-2 px-5 lg:px-16 items-center justify-between ${
+        isScrolled ? "scrolled" : ""
+      }`}
+    >
       <div className="flex gap-2 items-center">
         <Image src={Logo} alt="Anmc logo" width={50} height={50} />
         <p className="flex items-center capitalize font-semibold text-2xl">
@@ -64,11 +51,13 @@ export default function Header({ scrollToRef }) {
 
       {/* Regular menu for larger screens */}
       <nav className="container mx-auto flex-grow">
-        <ul className="hidden lg:flex justify-start gap-10">
+        <ul className="hidden lg:flex justify-end gap-10">
           {navLinks.map((link) => (
             <li className="mx-2" key={link.section}>
               <a
-                className="text-black capitalize text-sm cursor-pointer"
+                className={`capitalize text-sm cursor-pointer ${
+                  isScrolled ? "text-black" : "text-white"
+                }`}
                 onClick={() => scrollToRef(link.section)}
               >
                 {link.label}
@@ -80,12 +69,17 @@ export default function Header({ scrollToRef }) {
 
       {/* Mobile menu toggle */}
       <div className="lg:hidden items-end">
-        <FiMenu className="text-3xl cursor-pointer" onClick={toggleMenu} />
+        <FiMenu
+          className={`text-3xl cursor-pointer ${
+            isScrolled ? "text-black" : "text-white"
+          }`}
+          onClick={toggleMenu}
+        />
       </div>
       {/* Mobile menu */}
       <div
         className={`lg:hidden fixed top-0 right-0 h-full bg-white z-50 transition-all duration-500 ${
-          isMenuOpen ? "w-3/5" : "w-0"
+          isMenuOpen ? "w-2/5" : "w-0"
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
