@@ -60,11 +60,11 @@ const Hero = () => {
           transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
           className="absolute lg:left-10 text-white"
         >
-          <p className="text-6xl font-bold mb-1">Africa</p>
-          <p className="text-3xl font-semibold mb-4">
+          <p className="text-3xl lg:text-6xl font-bold mb-1">Africa</p>
+          <p className="text-xl lg:text-3xl font-semibold mb-4">
             NFT & Metaverse Conference
           </p>
-          <p className="flex flex-col text-xl gap-0 mb-4">
+          <p className="flex flex-col text-sm lg:text-xl gap-0 mb-4">
             <span>Unlocking Africa&apos;s Digital Future:</span>
             <span> showcasing Creativity. Made by Africa. For Africa</span>
           </p>

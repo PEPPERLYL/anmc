@@ -22,7 +22,7 @@ const logos = [
 
 const Logos = () => {
   return (
-    <Marquee gradient={false}>
+    <Marquee gradient={false} speed={30}>
       {logos.map((logo) => (
         <div key={logo.id} className="mx-4 lg:mx-20">
           <Image

@@ -35,14 +35,14 @@ export default function Header({ scrollToRef }) {
 
   return (
     <header
-      className={`sticky-header flex bg-transparent py-4 lg:py-2 px-5 lg:px-24 items-center justify-between ${
+      className={`sticky-header flex bg-transparent py-2 lg:py-2 px-5 lg:px-24 items-center justify-between ${
         isScrolled ? "scrolled" : ""
       }`}
     >
       <div className="flex gap-2 items-center">
         <Image src={Logo} alt="Anmc logo" width={50} height={50} />
         <p className="flex items-center capitalize font-semibold text-2xl">
-          <span className="text-red-700 font-light italic">a</span>
+          <span className="text-red-700 font-medium italic">a</span>
           <span className="text-blue-600 font-light italic">n</span>
           <span className="text-yellow-500 font-light italic">m</span>
           <span className="text-green-400 font-bold ml-1">c</span>

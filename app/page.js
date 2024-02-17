@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       <Header scrollToRef={scrollToRef} />
-      <section ref={sectionRefs.home} className="flex flex-col gap-3">
+      <section ref={sectionRefs.home} className="flex flex-col gap-4 lg:gap-10">
         <div>
           <Hero />
         </div>
