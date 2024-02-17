@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Logos from "@/components/Logos";
+import Attend from "@/components/Attend";
 
 export default function Home() {
   const sectionRefs = {
@@ -31,12 +32,15 @@ export default function Home() {
         <div>
           <Logos />
         </div>
+        <div>
+          <Attend />
+        </div>
       </section>
-      <section ref={sectionRefs.event} className="h-[300px] mb-8">
+      <section ref={sectionRefs.event} className="h-[300px] mt-10">
         <h1 className="text-3xl font-bold">Section 2</h1>
         <p>This is the second section.</p>
       </section>
-      <section ref={sectionRefs.ecosystems} className="h-[300px] mb-8">
+      <section ref={sectionRefs.ecosystems} className="h-[300px]">
         <h1 className="text-3xl font-bold">Section 3</h1>
         <p>This is the third section.</p>
       </section>
