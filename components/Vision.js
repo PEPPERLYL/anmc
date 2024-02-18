@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import { motion } from "framer-motion";
 import visionimg from "../assets/vision.png";
 import wave from "../assets/wave.png";
 
@@ -8,20 +8,37 @@ const Vision = () => {
     <>
       <div className="flex">
         <div className=" lg:w-2/6 w-1/2 lg:h-[720px] h-[560px]  bg-[#001E2C] flex items-center justify-end">
-          <Image
-            src={visionimg}
-            alt="Vision Image"
-            width={250}
-            height={150}
-            className="object-cover w-full h-full py-12 lg:py-28 pl-20"
-          />
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+            className="h-full w-full"
+          >
+            <Image
+              src={visionimg}
+              alt="Vision Image"
+              width={250}
+              height={150}
+              className="object-cover w-full h-full py-12 lg:py-28 pl-20"
+            />
+          </motion.div>
         </div>
         <div className="w-1/2 lg:w-4/6 lg:h-[720px] h-[560px] flex flex-col lg:px-10 px-2 lg:py-28 py-2 items-start">
-          <div className="flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+            className="flex flex-col items-center"
+          >
             <p className="lg:text-4xl text-2xl font-semibold">OUR VISION</p>
             <Image src={wave} alt="Wave" className="lg:my-2 lg:px-2 px-10" />
-          </div>
-          <div className="lg:pr-48">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
+            className="lg:pr-48"
+          >
             <p className="mt-3 lg:text-xl text-lg leading-snug tracking-tight font-normal">
               NFTs and the Metaverse stand as potent drivers for economic
               prosperity, cultural preservation, and technological excellence,
@@ -29,8 +46,12 @@ const Vision = () => {
               the digital age. <br />
               To achieve these, we aim to create:
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ ease: "easeOut", duration: 0.5, delay: 0.9 }}
+          >
             <p className="mt-3 lg:text-xl text-lg leading-snug tracking-tight font-normal">
               A vibrant community of digital creators.
               <br /> An exquisite community of artists.
@@ -47,7 +68,7 @@ const Vision = () => {
               <br /> AI-driven Web3 ecosystem that automate the future
               Realization of an inclusive digital Africa.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
