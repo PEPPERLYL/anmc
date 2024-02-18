@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Logos from "@/components/Logos";
 import Attend from "@/components/Attend";
+import Vision from "@/components/Vision";
 
 export default function Home() {
   const sectionRefs = {
@@ -34,6 +35,9 @@ export default function Home() {
         </div>
         <div>
           <Attend />
+        </div>
+        <div>
+          <Vision />
         </div>
       </section>
       <section ref={sectionRefs.event} className="h-[300px] mt-10">

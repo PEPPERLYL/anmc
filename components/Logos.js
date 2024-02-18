@@ -18,19 +18,27 @@ const logos = [
   { id: 6, src: logo6, alt: "Logo 6" },
   { id: 7, src: logo7, alt: "Logo 7" },
   { id: 8, src: logo8, alt: "Logo 8" },
+  { id: 9, src: logo1, alt: "Logo 9" },
+  { id: 10, src: logo2, alt: "Logo 10" },
+  { id: 11, src: logo3, alt: "Logo 11" },
+  { id: 12, src: logo4, alt: "Logo 12" },
+  { id: 13, src: logo5, alt: "Logo 13" },
+  { id: 14, src: logo6, alt: "Logo 14" },
+  { id: 15, src: logo7, alt: "Logo 15" },
+  { id: 16, src: logo8, alt: "Logo 16" },
 ];
 
 const Logos = () => {
   return (
     <Marquee gradient={false} speed={30}>
       {logos.map((logo) => (
-        <div key={logo.id} className="mx-4 lg:mx-20">
+        <div key={logo.id} className="mx-10 lg:mx-20">
           <Image
             src={logo.src}
             width={150}
             height={150}
             alt={logo.alt}
-            className="object-contain w-24 h-24"
+            className="object-contain w-24 h-24 hover:scale-90"
           />
         </div>
       ))}

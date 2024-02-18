@@ -55,7 +55,7 @@ export default function Header({ scrollToRef }) {
           {navLinks.map((link) => (
             <li className="mx-2" key={link.section}>
               <a
-                className={`capitalize text-sm cursor-pointer ${
+                className={`capitalize text-sm cursor-pointer hover:text-blue-600 ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
                 onClick={() => scrollToRef(link.section)}
