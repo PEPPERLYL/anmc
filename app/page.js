@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Logos from "@/components/Logos";
 import Attend from "@/components/Attend";
 import Vision from "@/components/Vision";
+import Mission from "@/components/Mission";
 
 export default function Home() {
   const sectionRefs = {
@@ -37,7 +38,12 @@ export default function Home() {
           <Attend />
         </div>
         <div>
-          <Vision />
+          <div className="flex flex-col gap-0">
+            <Vision />
+          </div>
+          <div>
+            <Mission />
+          </div>
         </div>
       </section>
       <section ref={sectionRefs.event} className="h-[300px] mt-10">
