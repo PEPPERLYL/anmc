@@ -7,7 +7,7 @@ const Vision = () => {
   return (
     <>
       <div className="flex">
-        <div className=" lg:w-2/6 w-1/3 lg:h-[720px] h-[560px]  bg-[#001E2C] flex items-center justify-end">
+        <div className=" lg:w-2/6 w-1/3 h-[560px]  bg-[#001E2C] flex items-center justify-end">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -23,15 +23,15 @@ const Vision = () => {
             />
           </motion.div>
         </div>
-        <div className="w-2/3 lg:w-4/6 lg:h-[720px] h-[560px] flex flex-col lg:px-10 px-2 lg:py-28 py-2 items-start">
+        <div className="w-2/3 lg:w-4/6 h-[560px] flex flex-col lg:px-10 px-2 lg:py-16 py-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
             className="flex flex-col items-center"
           >
-            <p className="lg:text-4xl text-2xl font-semibold">OUR VISION</p>
-            <Image src={wave} alt="Wave" className="lg:my-2 lg:px-2 px-10" />
+            <p className="text-3xl font-semibold">OUR VISION</p>
+            <Image src={wave} alt="Wave" className="my-2 px-4 " />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -39,7 +39,7 @@ const Vision = () => {
             transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
             className="lg:pr-28"
           >
-            <p className="mt-3 lg:text-[20px] text-md leading-snug tracking-tight font-normal">
+            <p className="mt-3 text-md leading-snug tracking-tight font-normal">
               NFTs and the Metaverse stand as potent drivers for economic
               prosperity, cultural preservation, and technological excellence,
               poised to elevate our continent to a prominent global position in
@@ -52,7 +52,7 @@ const Vision = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ ease: "easeOut", duration: 0.5, delay: 0.9 }}
           >
-            <p className="mt-3 lg:text-[20px] text-md leading-snug tracking-tight font-normal">
+            <p className="mt-3 text-md leading-snug tracking-tight font-normal">
               A vibrant community of digital creators.
               <br /> An exquisite community of artists.
               <br /> A robust game developers community.
