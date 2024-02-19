@@ -76,8 +76,12 @@ const Attend = () => {
         {attendbox.map((item, index) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: index * 0.1 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: index * 0.1, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
             key={index}
             className="relative overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-md cursor-pointer hover:-translate-y-2 group"
           >

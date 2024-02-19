@@ -10,15 +10,23 @@ const Mission = () => {
       <div className="w-full lg:w-2/3 h-[560px] bg-[#001E2C]"></div>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { delay: 0.3, duration: 0.5 },
+        }}
+        viewport={{ once: true }}
         className="absolute inset-0 flex  bg-white lg:mx-32 lg:my-32 mx-10 my-24"
       >
         <div className="w-full lg:w-3/4 flex flex-col items-start px-2">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.6, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
             className=" flex flex-col items-center py-4"
           >
             <p className="text-3xl font-semibold">OUR MISSION</p>
@@ -27,8 +35,12 @@ const Mission = () => {
           <div>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeOut", duration: 0.5, delay: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.9, duration: 0.5 },
+              }}
+              viewport={{ once: true }}
               className="text-md"
             >
               Empowering Africa’s digital potential.

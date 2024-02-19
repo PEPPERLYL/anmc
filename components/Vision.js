@@ -10,8 +10,12 @@ const Vision = () => {
         <div className=" lg:w-2/6 w-1/3 h-[560px]  bg-[#001E2C] flex items-center justify-end">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { delay: 0.3, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
             className="h-full w-full"
           >
             <Image
@@ -26,17 +30,25 @@ const Vision = () => {
         <div className="w-2/3 lg:w-4/6 h-[560px] flex flex-col lg:px-10 px-2 lg:py-16 py-2 items-start">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.3 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { delay: 0.3, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
             className="flex flex-col items-center"
           >
             <p className="text-3xl font-semibold">OUR VISION</p>
             <Image src={wave} alt="Wave" className="my-2 px-4 " />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.6 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { delay: 0.6, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
             className="lg:pr-28"
           >
             <p className="mt-3 text-md leading-snug tracking-tight font-normal">
@@ -48,9 +60,13 @@ const Vision = () => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.9 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { delay: 0.9, duration: 0.5 },
+            }}
+            viewport={{ once: true }}
           >
             <p className="mt-3 text-md leading-snug tracking-tight font-normal">
               A vibrant community of digital creators.
